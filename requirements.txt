@@ -2,10 +2,12 @@ robotframework==7.3.2
 robotframework-debuglibrary==2.5.0
 robotframework-browser==19.9.0
 robotframework-requests==0.9.6
-robotframework-jsonlibrary==0.5
+robotframework-jsonlibrary==0.3.1
 robotframework-databaselibrary==1.4.4
-robotframework-seleniumlibrary==6.6.1
-robotframework-appiumlibrary==2.1.0
-robotframework-pabot==2.20.0
-pyyaml==6.0.2
-Appium-Python-Client==3.2.1
+robotframework-seleniumlibrary==6.7.1
+robotframework-appiumlibrary==3.1.0
+robotframework-pabot==2.18.0
+pyyaml==5.3.1
+Appium-Python-Client==5.1.1
+
+-e ./resources/library/robotframework-DobbyCommonLibrary-2.0.31

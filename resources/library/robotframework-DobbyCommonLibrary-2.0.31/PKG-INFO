@@ -1,0 +1,21 @@
+Metadata-Version: 2.1
+Name: robotframework-DobbyCommonLibrary
+Version: 2.0.31
+Summary: doppio common library for robot framework
+Home-page: https://gitlab.com/doppiotech/dp-common
+Author: Doppio Tech
+Author-email: darawalee.p@doppio-tech.com
+License: UNKNOWN
+Keywords: DobbyWebCommon,DobbyCommon,DobbyAppCommon,DobbyCommonLibrary
+Platform: UNKNOWN
+Classifier: Programming Language :: Python
+Classifier: Programming Language :: Python :: 2
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Classifier: Framework :: Robot Framework
+Classifier: Framework :: Robot Framework :: Library
+License-File: LICENSE
+
+UNKNOWN
+
