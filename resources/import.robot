@@ -19,6 +19,9 @@ Library    AppiumLibrary    run_on_failure=No Operation
 Variables   ${CURDIR}/settings/setting_web.yaml
 # Variables   ${CURDIR}/settings/setting_mobile.yaml
 
+### Mobile config ###
+Variables   ${CURDIR}/settings/config/${PLATFORM.lower()}_config.yaml
+
 ### Translation ###
 Variables   ${CURDIR}/translation/mobile/${LANG.lower()}.yaml
 Variables   ${CURDIR}/translation/web/${LANG.lower()}.yaml
