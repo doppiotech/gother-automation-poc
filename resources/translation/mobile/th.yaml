@@ -1,1 +1,39 @@
-mock: mock
+translation_mobile:
+  menu:
+    profile_th: โปรไฟล์
+    profile_en: Profile
+    profile: โปรไฟล์
+    home: หน้าหลัก
+  setting_page:
+    setting_header: ตั้งค่า
+    setting_menu_th: ตั้งค่า
+    setting_menu_en: Setting
+    setting_menu: ตั้งค่า
+    language_th: ภาษา
+    language_en: Language
+    language: ไทย
+  login_page:
+    log_in_sign_up: mock
+    option:
+      email_mobile: mock
+    email: mock
+    password: mock
+    email_log_in: mock
+    password_log_in: mock
+  home_page:
+    menu:
+      flights: mock
+  flight_page:
+    origin: mock
+    destination: mock
+    type:
+      round_trip: mock
+      one_way: mock
+    search: mock
+    view_details: mock
+    continue_button: mock
+    use_as_passenger_information: mock
+    confirm_booking: mock
+    searching_best_fare: mock
+    your_flight: mock
+    add_on_service: mock

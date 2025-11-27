@@ -9,5 +9,6 @@ robotframework-appiumlibrary==3.1.0
 robotframework-pabot==2.18.0
 pyyaml==5.3.1
 Appium-Python-Client==5.1.1
+numpy==1.26.4
 
 -e ./resources/library/robotframework-DobbyCommonLibrary-2.0.31
