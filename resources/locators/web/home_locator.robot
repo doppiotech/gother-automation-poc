@@ -5,6 +5,6 @@ ${home_locator.btn_origin}                  //input[@id = "flight-search-departu
 ${home_locator.btn_destination}             //input[@id = "flight-search-arrival"]
 ${home_locator.btn_departure_date}          //input[@id = "flight-search-date-departure"]
 ${home_locator.btn_search}                  (//button[@id = "flight-search-button"]//div[text() = "Search"])[1]
-${home_locator.btn_selected_departure_date}     (//div[div[contains(text(), "December 2025")]]//span[text()="10"])[last()]
+${home_locator.btn_selected_departure_date}     (//div[div[contains(text(), "December 2025")]]//span[text()="9"])[last()]
 ${home_locator.txt_origin_airport}          //p[. = "(BKKA)"]
 ${home_locator.txt_destination_airport}     (//div[@id = "flight-search-transition"]//p[. = "Kansai International Airport"])[last()]
