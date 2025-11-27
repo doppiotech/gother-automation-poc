@@ -1,1 +1,8 @@
-mock
+TC_WEB_POC_001:
+  email:  "wassapolpro@gmail.com"
+  password:   "Doppio123*"
+  credit_card_payment:
+    card_no:  "4111111111111111"
+    card_holder_name: "Wassapol Satienpun"
+    expiry_date: "11/30"
+    cvv: "123"
