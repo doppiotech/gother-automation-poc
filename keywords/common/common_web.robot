@@ -13,3 +13,6 @@ Gother web setup
     [Arguments]        ${headless_mode}=${False}
     common_web.Open web browser by url    url=${gother_web.url.${LANG.lower()}}    headless_mode=${headless_mode}
     Browser.Set browser timeout     1m 30 seconds
+
+Click accecpt all cookies
+    Browser.Click       //button[text() = "Accept All"]

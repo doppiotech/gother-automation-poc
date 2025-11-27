@@ -6,3 +6,4 @@ Login with email to home page successfully
     login_page.Click log in button
     login_page.Input password   ${password}
     login_page.Click log in button
+    common_web.Click accecpt all cookies
