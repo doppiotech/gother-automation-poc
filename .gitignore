@@ -3,3 +3,5 @@ logs
 *.html
 .DS_Store
 .venv
+*.pyc
+*.txt

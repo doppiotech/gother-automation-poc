@@ -127,3 +127,96 @@ Swipe to find element
         ${is_visible}=             BuiltIn.Run keyword and return status    DobbyAppCommon.Wait until element is visible except stale    locator=${locator}     timeout=${timeout}
     END
     BuiltIn.Should be true      ${is_visible}       msg=locator '${locator}' not found even after reaching scroll end
+
+Select date by swipe
+    [Documentation]     Swipe date, month and year to expected value
+    ...                 Arguments
+    ...                     - expected_date: Expected date Ex. 16
+    ...                     - expected_month: Expected month Ex. December
+    ...                     - expected_year: Expected year Ex. 1997
+    ...                     - date_locator: Current date value locator Ex. //android.view.View[android.widget.TextView[@text="Choose birthday"]]/following-sibling::android.view.View[1]/android.widget.TextView
+    ...                     - month_locator: Current month value locator Ex. //android.view.View[android.widget.TextView[@text="Choose birthday"]]/following-sibling::android.view.View[3]/android.widget.TextView
+    ...                     - year_locator: Current year value locator Ex. //android.view.View[android.widget.TextView[@text="Choose birthday"]]/following-sibling::android.view.View[5]/android.widget.TextView
+    ...                 Remark: ตอนนี้ไม่มี id หรือ xpath ที่ระบุได้ชัดเจนว่า current value คืออะไร ทำให้มีโอกาสเลื่อนเพี้ยน
+    [Arguments]     ${expected_date}     ${expected_month}     ${expected_year}    ${date_locator}     ${month_locator}        ${year_locator}      ${extra_retry}=5
+    ${actual_year}      DobbyAppCommon.Get text from element when ready         ${year_locator}
+    ${year_dif}         BuiltIn.Evaluate    int(${expected_year}) - int(${actual_year})
+    IF      ${year_dif}>=0
+        FOR     ${i}    IN RANGE    ${year_dif}
+        # FOR     ${i}    IN RANGE    ${year_dif}+${extra_retry}
+        #     ${actual_year}      DobbyAppCommon.Get text from element when ready         ${year_locator}
+        #     BuiltIn.Exit for loop if        '${actual_year}'=='${expected_year}'
+            common_mobile.Swipe up year
+        END
+    ELSE
+        FOR     ${i}    IN RANGE    ${year_dif}         0
+        # FOR     ${i}    IN RANGE    ${year_dif}-${extra_retry}      0
+            # ${actual_year}      DobbyAppCommon.Get text from element when ready         ${year_locator}
+            # BuiltIn.Exit for loop if        '${actual_year}'=='${expected_year}'
+            common_mobile.Swipe down year
+        END
+    END
+    ${actual_month}     DobbyAppCommon.Get text from element when ready         ${month_locator}
+    ${month_dif}        BuiltIn.Evaluate    int(__import__('datetime').datetime.strptime("${expected_month}".title(), '%B').month) - int(__import__('datetime').datetime.strptime("${actual_month}".title(), '%B').month)
+    IF      ${month_dif}>=0
+        FOR     ${i}    IN RANGE    ${month_dif}
+        # FOR     ${i}    IN RANGE    ${month_dif}+${extra_retry}
+            # ${actual_month}     DobbyAppCommon.Get text from element when ready         ${month_locator}
+            # BuiltIn.Exit for loop if        '${actual_month}'=='${expected_month}'
+            common_mobile.Swipe up month
+        END
+    ELSE
+        FOR     ${i}    IN RANGE    ${month_dif}        0
+        # FOR     ${i}    IN RANGE    ${month_dif}-${extra_retry}     0
+            # ${actual_month}     DobbyAppCommon.Get text from element when ready         ${month_locator}
+            # BuiltIn.Exit for loop if        '${actual_month}'=='${expected_month}'
+            common_mobile.Swipe down month
+        END
+    END
+    ${actual_date}      DobbyAppCommon.Get text from element when ready         ${date_locator}
+    ${date_dif}         BuiltIn.Evaluate    int(${expected_date}) - int(${actual_date})
+    IF      ${date_dif}>=0
+        FOR     ${i}    IN RANGE    ${date_dif}
+        # FOR     ${i}    IN RANGE    ${date_dif}+${extra_retry}
+            # ${actual_date}      DobbyAppCommon.Get text from element when ready         ${date_locator}
+            # BuiltIn.Exit for loop if        '${actual_date}'=='${expected_date}'
+            common_mobile.Swipe up date
+        END
+    ELSE
+        FOR     ${i}    IN RANGE    ${date_dif}         0
+        # FOR     ${i}    IN RANGE    ${date_dif}-${extra_retry}      0
+            # ${actual_date}      DobbyAppCommon.Get text from element when ready         ${date_locator}
+            # BuiltIn.Exit for loop if        '${actual_date}'=='${expected_date}'
+            common_mobile.Swipe down date
+        END
+    END
+    ${actual_date}      DobbyAppCommon.Get text from element when ready         ${date_locator}
+    ${actual_month}     DobbyAppCommon.Get text from element when ready         ${month_locator}
+    ${actual_year}      DobbyAppCommon.Get text from element when ready         ${year_locator}
+    BuiltIn.Should be equal     ${actual_date}          ${expected_date}        msg=Date after swipe not match with expected. "${actual_date}" != "${expected_date}"
+    BuiltIn.Should be equal     ${actual_month}         ${expected_month}       msg=Month after swipe not match with expected. "${actual_month}" != "${expected_month}"
+    BuiltIn.Should be equal     ${actual_year}          ${expected_year}        msg=Year after swipe not match with expected. "${actual_year}" != "${expected_year}"
+
+Swipe up date
+    [Arguments]     ${start_x}=25       ${start_y}=80   ${end_x}=25     ${end_y}=75     ${duration}=0.5s
+    AppiumLibrary.Swipe by percent      start_x=${start_x}      start_y=${start_y}      end_x=${end_x}      end_y=${end_y}      duration=${duration}
+
+Swipe down date
+    [Arguments]     ${start_x}=25       ${start_y}=70   ${end_x}=25     ${end_y}=75     ${duration}=0.5s
+    AppiumLibrary.Swipe by percent      start_x=${start_x}      start_y=${start_y}      end_x=${end_x}      end_y=${end_y}      duration=${duration}
+
+Swipe up month
+    [Arguments]     ${start_x}=50       ${start_y}=80   ${end_x}=50     ${end_y}=75     ${duration}=0.5s
+    AppiumLibrary.Swipe by percent      start_x=${start_x}      start_y=${start_y}      end_x=${end_x}      end_y=${end_y}      duration=${duration}
+
+Swipe down month
+    [Arguments]     ${start_x}=50       ${start_y}=70   ${end_x}=50     ${end_y}=75     ${duration}=0.5s
+    AppiumLibrary.Swipe by percent      start_x=${start_x}      start_y=${start_y}      end_x=${end_x}      end_y=${end_y}      duration=${duration}
+
+Swipe up year
+    [Arguments]     ${start_x}=75       ${start_y}=80   ${end_x}=75     ${end_y}=75     ${duration}=0.5s
+    AppiumLibrary.Swipe by percent      start_x=${start_x}      start_y=${start_y}      end_x=${end_x}      end_y=${end_y}      duration=${duration}
+
+Swipe down year
+    [Arguments]     ${start_x}=75       ${start_y}=70   ${end_x}=75     ${end_y}=75     ${duration}=0.5s
+    AppiumLibrary.Swipe by percent      start_x=${start_x}      start_y=${start_y}      end_x=${end_x}      end_y=${end_y}      duration=${duration}
