@@ -4,7 +4,7 @@ Resource        ${CURDIR}/../../resources/import.robot
 Test Setup      common_web.Gother web setup
 
 *** Test Cases ***
-TC_WEB_POC_001
+Automation POC Test Cases - Book one way flight
     [Tags]      TC_WEB_POC_001
     home_page.Click login or sign up button
     # Login page
