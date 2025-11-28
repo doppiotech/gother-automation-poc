@@ -1,1 +1,11 @@
-mock: mock
+platform:         ios
+platformName:     ios
+bundleId:         com.seo.dev.gother
+tags:             set0
+automationName:   XCUITest
+platformVersion:  '18.6'
+deviceName:       iPhone 14
+udid:             00008110-001E14583C11401E
+remote_url:       http://127.0.0.1:4723
+system_port:      18000
+app:              mock

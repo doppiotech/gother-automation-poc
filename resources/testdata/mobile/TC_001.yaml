@@ -1,6 +1,9 @@
 TC_001:
   email: nithas.doppio@gmail.com
   password: Doppio123*
-  flight_type: One-way
   origin: Bangkok Don Mueang International Airport
   destination: Chiang Mai Airport
+  card_number: "4111111111111111"
+  card_name: Nithas Fuangcharugul
+  card_expiry_date: "11/30"
+  card_cvv_code: "123"

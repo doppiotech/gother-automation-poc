@@ -51,11 +51,17 @@ Open application
     ...                 appium:systemPort=${system_port}
     ...                 appium:uiautomator2ServerInstallTimeout=${90000}
     ...                 appium:uiautomator2ServerLaunchTimeout=${90000}
-    IF  '${doppio_farm}'=='True' and '${platformName}'=='ios'
+    IF      '${platformName}'=='ios'
+        Collections.Remove from dictionary       ${capability}    
+        ...     appium:app
         Collections.Set to dictionary       ${capability}    
-        ...     appium:showXcodeLog=${TRUE}
-        ...     appium:wdaLocalPort=${system_port}
-        ...     appium:usePrebuiltWDA=${TRUE}
+        ...     appium:bundleId=${bundleId}
+        IF  '${doppio_farm}'=='${TRUE}'
+            Collections.Set to dictionary       ${capability}    
+            ...     appium:showXcodeLog=${TRUE}
+            ...     appium:wdaLocalPort=${system_port}
+            ...     appium:usePrebuiltWDA=${TRUE}
+        END
     END
     BuiltIn.Log                 ${capability}
     BuiltIn.Log to console      ${capability}
@@ -86,6 +92,9 @@ Select language
     mobile_setting_page.Tap setting menu without checking language
     mobile_setting_page.Tap language button without checking language
     common_mobile.Tap menu by menu name     ${translation_mobile.setting_page.language}
+    IF      '${PLATFORM.lower()}'=='ios'
+        mobile_setting_page.Tap back button
+    END
     common_mobile.Verify menu is displayed  ${translation_mobile.menu.profile}
 
 Tap element with replace string
@@ -118,8 +127,8 @@ Swipe to find element
     ...                            - Point of ending swipe y axis (percent):     ${end_y}=20
     ...                            - Duration of swipe (millisecond):            ${duration}=1000
     [Arguments]                ${locator}           ${timeout}=0.5          ${max_attempts}=10
-    ...                        ${start_x}=50        ${start_y}=80           ${end_x}=50
-    ...                        ${end_y}=20          ${duration}=1s
+    ...                        ${start_x}=50        ${start_y}=75           ${end_x}=50
+    ...                        ${end_y}=25          ${duration}=1s
     ${is_visible}=              BuiltIn.Run keyword and return status      DobbyAppCommon.Wait until element is visible except stale    locator=${locator}     timeout=${timeout}
     FOR    ${i}    IN RANGE    ${max_attempts}
         BuiltIn.Exit for loop if    ${is_visible}
@@ -220,3 +229,13 @@ Swipe up year
 Swipe down year
     [Arguments]     ${start_x}=75       ${start_y}=70   ${end_x}=75     ${end_y}=75     ${duration}=0.5s
     AppiumLibrary.Swipe by percent      start_x=${start_x}      start_y=${start_y}      end_x=${end_x}      end_y=${end_y}      duration=${duration}
+
+Find and tap element when ready
+    [Arguments]     ${locator}
+    common_mobile.Swipe to find element     ${locator}
+    DobbyAppCommon.Tap element when ready   ${locator}
+
+Find and input text to element when ready
+    [Arguments]     ${locator}      ${text}
+    common_mobile.Swipe to find element                 ${locator}
+    DobbyAppCommon.Input text to element when ready     ${locator}      ${text}

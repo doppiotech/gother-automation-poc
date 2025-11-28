@@ -26,7 +26,7 @@ translation_mobile:
   flight_page:
     origin: mock
     destination: mock
-    type:
+    flight_type:
       round_trip: mock
       one_way: mock
     search: mock
@@ -37,3 +37,13 @@ translation_mobile:
     searching_best_fare: mock
     your_flight: mock
     add_on_service: mock
+    flight_price_changed: mock
+  payment_page:
+    payment_method:
+      credit_debit: mock
+    txt_card_number: mock
+    txt_card_name: mock
+    txt_card_expiry_date: mock
+    txt_card_cvv: mock
+    pay_now: mock
+    payment_successful: mock

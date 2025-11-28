@@ -26,7 +26,7 @@ translation_mobile:
   flight_page:
     origin: Origin
     destination: Destination
-    type:
+    flight_type:
       round_trip: Round-trip
       one_way: One-way
     search: Search
@@ -37,3 +37,13 @@ translation_mobile:
     searching_best_fare: We're searching for the best fare
     your_flight: Your Flight
     add_on_service: Add-on Services
+    flight_price_changed: Flight Price Changed
+  payment_page:
+    payment_method:
+      credit_debit: Credit Card/Debit Card
+    txt_card_number: Card Number *
+    txt_card_name: Cardholder Name *
+    txt_card_expiry_date: Expiry Date *
+    txt_card_cvv: CVV/CVC Code *
+    pay_now: Pay Now
+    payment_successful: Payment Successful!

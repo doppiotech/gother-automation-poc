@@ -7,3 +7,6 @@ Tap setting menu without checking language
 
 Tap language button without checking language
     DobbyAppCommon.Tap element when ready       ${mobile_setting_locator.btn_language_2_lang}
+
+Tap back button
+    DobbyAppCommon.Tap element when ready       ${mobile_setting_locator.btn_back}

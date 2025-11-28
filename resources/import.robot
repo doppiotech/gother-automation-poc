@@ -47,10 +47,12 @@ Resource    ${CURDIR}/../keywords/mobile/pages/mobile_setting_page.robot
 Resource    ${CURDIR}/../keywords/mobile/pages/mobile_login_page.robot
 Resource    ${CURDIR}/../keywords/mobile/pages/mobile_home_page.robot
 Resource    ${CURDIR}/../keywords/mobile/pages/mobile_flight_page.robot
+Resource    ${CURDIR}/../keywords/mobile/pages/mobile_payment_page.robot
 
 ### Mobile Feature ###
 Resource    ${CURDIR}/../keywords/mobile/features/mobile_login_feature.robot
 Resource    ${CURDIR}/../keywords/mobile/features/mobile_flight_feature.robot
+Resource    ${CURDIR}/../keywords/mobile/features/mobile_payment_feature.robot
 
 ### Mobile Locator ###
 Resource    ${CURDIR}/locators/mobile/${PLATFORM.lower()}/common_mobile_locator.robot
@@ -58,3 +60,4 @@ Resource    ${CURDIR}/locators/mobile/${PLATFORM.lower()}/mobile_setting_locator
 Resource    ${CURDIR}/locators/mobile/${PLATFORM.lower()}/mobile_login_locator.robot
 Resource    ${CURDIR}/locators/mobile/${PLATFORM.lower()}/mobile_home_locator.robot
 Resource    ${CURDIR}/locators/mobile/${PLATFORM.lower()}/mobile_flight_locator.robot
+Resource    ${CURDIR}/locators/mobile/${PLATFORM.lower()}/mobile_payment_locator.robot
