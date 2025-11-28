@@ -15,8 +15,8 @@ Automation POC Test Cases - Book one way flight
     your_flights_page.Select first flight
     your_flights_page.Click continue button
     # Booking information page
-    booking_information_page.Verify booking information label is displayed
     BuiltIn.Run Keyword And Ignore Error    booking_information_page.Click ok button in flight price changed modal
+    booking_information_page.Verify booking information label is displayed
     booking_information_page.Click use as passenger information
     booking_information_page.Click confirm information button
     # Add on services page
