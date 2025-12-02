@@ -44,3 +44,7 @@ Verify flight selection page is displayed
 
 Verify add-on service is displayed
     DobbyAppCommon.Wait until element is visible except stale       ${mobile_flight_locator.lbl_add_on_service}
+
+Check flight price changed popup and continue
+    ${visible}      BuiltIn.Run keyword and return status       DobbyAppCommon.Wait until element is visible except stale       ${mobile_flight_locator.lbl_flight_price_changed}       timeout=5
+    BuiltIn.Run keyword if      ${visible}      mobile_flight_page.Tap continue button

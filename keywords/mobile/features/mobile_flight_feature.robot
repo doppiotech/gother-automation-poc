@@ -11,6 +11,7 @@ Search flight
 Select first flight and continue to payment page
     mobile_flight_page.Select flight by index
     mobile_flight_page.Tap continue button
+    mobile_flight_page.Check flight price changed popup and continue
     mobile_flight_page.Verify confirm booking button is displayed
     mobile_flight_page.Toggle use as passenger information button
     mobile_flight_page.Tap confirm booking button

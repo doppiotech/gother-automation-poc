@@ -12,3 +12,4 @@ ${mobile_flight_locator.btn_confirm_booking}            android=UiSelector().cla
 ${mobile_flight_locator.lbl_searching_best_fare}        android=UiSelector().className("android.widget.TextView").text("${translation_mobile.flight_page.searching_best_fare}")
 ${mobile_flight_locator.lbl_your_flight}                android=UiSelector().className("android.widget.TextView").text("${translation_mobile.flight_page.your_flight}")
 ${mobile_flight_locator.lbl_add_on_service}             android=UiSelector().className("android.widget.TextView").text("${translation_mobile.flight_page.add_on_service}")
+${mobile_flight_locator.lbl_flight_price_changed}       android=UiSelector().className("android.widget.TextView").text("${translation_mobile.flight_page.flight_price_changed}")

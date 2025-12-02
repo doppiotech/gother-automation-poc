@@ -51,6 +51,7 @@ Open application
     ...                 appium:systemPort=${system_port}
     ...                 appium:uiautomator2ServerInstallTimeout=${90000}
     ...                 appium:uiautomator2ServerLaunchTimeout=${90000}
+    ...                 appium.chromedriverAutodownload=${TRUE}
     IF      '${platformName}'=='ios'
         Collections.Remove from dictionary       ${capability}    
         ...     appium:app
